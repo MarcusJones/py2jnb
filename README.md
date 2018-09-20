@@ -1,12 +1,12 @@
-# Warning: This is unmaintained
+# Features after forking:
+- New token recognized for [Spyder](https://github.com/spyder-ide) notebooks (#%%)
 
-I do not have the bandwidth to maintain this project.  If you are interested, please feel free to fork and modify.
-
+Former readme follows:
 # PY2NB: Python To Notebook Converter
 
 This is a small utility for turning python scripts into jupyter notebooks and
 convert module-level multiline (triple quote) string literals into markdown
-cells.  
+cells.
 
 ## Why?
 
