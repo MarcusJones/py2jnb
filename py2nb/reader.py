@@ -38,6 +38,10 @@ def read(filename):
 def convert_toplevel_docstring(tokens):
     for token in tokens:
         # For each string
+        
+        if 0:
+            if token.start[0] > 20: raise
+        
         if token.type == tokenize.STRING:
             text = token.string
             # Must be a docstring
@@ -50,13 +54,39 @@ def convert_toplevel_docstring(tokens):
                              for line in text.strip('"\' \n').split('\n')]
                     text = '\n'.join(lines)
                     fmt = '# <markdowncell>\n{0}\n# <codecell>'.format(text)
-                    yield TokenInfo(type=tokenize.COMMENT,
+                    res = TokenInfo(type=tokenize.COMMENT,
                                     start=(startline, startcol),
                                     end=(endline, endcol),
                                     string=fmt,
                                     line='#')
+                    yield res
                     # To next token
                     continue
+        elif token.type == tokenize.COMMENT:
+            text = token.string
+            if text.startswith('#%%'):
+                #print("Spyder cell")
+                startline, startcol = token.start
+                # Starting column MUST be 0
+                if startcol == 0:
+                    endline, endcol = token.end
+                    lines = [line
+                             for line in text.strip('"\' \n').split('\n')]
+                    assert len(lines) == 1
+                    text = '\n'.join(lines)
+                    #text = text[3:]
+                    text = text.replace("#%%", "") 
+                    text = text.lstrip()
+                    fmt = '# <markdowncell>\n{0}\n# <codecell>'.format(text)
+                    res = TokenInfo(type=tokenize.COMMENT,
+                                    start=(startline, startcol),
+                                    end=(endline, endcol),
+                                    string=fmt,
+                                    line='#')
+                    yield res
+                    # To next token
+                    continue  
+      
         # Return untouched
         yield token
 
