@@ -1,5 +1,5 @@
 # Features after forking:
-- New token recognized for code cells `#%%` used in [Spyder](https://github.com/spyder-ide) and PyCharm scientific mode. 
+- New token recognized for code cells, defined by `#%%`, used in [Spyder](https://github.com/spyder-ide) and PyCharm scientific mode. 
 
 *Original source repo readme follows*
 ***************
