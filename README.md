@@ -1,7 +1,11 @@
 # Features after forking:
-- New token recognized for [Spyder](https://github.com/spyder-ide) notebooks (#%%)
+- New token recognized for code cells, defined by `#%%`, used in [Spyder](https://github.com/spyder-ide) and PyCharm scientific mode. 
 
-Former readme follows:
+
+
+
+*Original source repo readme follows*
+***************
 # PY2NB: Python To Notebook Converter
 
 This is a small utility for turning python scripts into jupyter notebooks and
