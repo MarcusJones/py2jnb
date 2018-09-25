@@ -1,5 +1,3 @@
-from __future__ import absolute_import, division, print_function
-
 from IPython.nbformat.v3 import nbpy
 from IPython import nbformat as nbf
 
