@@ -1,17 +1,43 @@
 import os
 from py2nb.converter import convert
+from py2nb.tools import python_to_notebook
 
 def test_convert():
     print("\nSTART TEST")
-    PATH_SIMPLE_PY = "/samples/hello.py"
-    print("Input file:",os.path.join(os.getcwd()+PATH_SIMPLE_PY ))
-    print("Output file: ")
-    assert os.path.exists(os.path.join(os.getcwd()+PATH_SIMPLE_PY ))
-    assert True
+    SAMPLE_DIR = os.path.join(os.getcwd(),'samples')
 
-    # consum = consume(resource=resouce_id,
-    #                  consumer_account=ocean.web3.eth.accounts[2],test
-    #                  provider_account=ocean.web3.eth.accounts[0],
-    #                  ocean_contracts_wrapper=ocean
-    #                  )
-    # assert consum.status_code == 200
+    INPUT_FNAME = 'hello.py'
+    BASENAME, _ = os.path.splitext(INPUT_FNAME)
+    INPUT_PY = os.path.join(SAMPLE_DIR,INPUT_FNAME)
+    print("Input file:",INPUT_PY)
+    assert os.path.exists(INPUT_PY)
+
+    OUTPUT_IPYNB = os.path.join(SAMPLE_DIR,BASENAME+".ipynb")
+    print("Output file: ", OUTPUT_IPYNB)
+    if os.path.exists(OUTPUT_IPYNB):
+        os.remove(OUTPUT_IPYNB)
+
+    python_to_notebook(INPUT_PY,OUTPUT_IPYNB)
+    assert os.path.exists(OUTPUT_IPYNB)
+
+    # os.remove(OUTPUT_IPYNB)
+
+
+def test_cells_convert():
+    SAMPLE_DIR = os.path.join(os.getcwd(), 'samples')
+
+    INPUT_FNAME = 'hello_cells.py'
+    BASENAME, _ = os.path.splitext(INPUT_FNAME)
+    INPUT_PY = os.path.join(SAMPLE_DIR, INPUT_FNAME)
+    print("Input file:", INPUT_PY)
+    assert os.path.exists(INPUT_PY)
+
+    OUTPUT_IPYNB = os.path.join(SAMPLE_DIR, BASENAME + ".ipynb")
+    print("Output file: ", OUTPUT_IPYNB)
+    if os.path.exists(OUTPUT_IPYNB):
+        os.remove(OUTPUT_IPYNB)
+
+    python_to_notebook(INPUT_PY,OUTPUT_IPYNB)
+    assert os.path.exists(OUTPUT_IPYNB)
+
+    # os.remove(OUTPUT_IPYNB)
