@@ -2,3 +2,5 @@ __pycache__
 build
 *.pyc
 .ipynb_checkpoints
+.idea
+.pytest_cache

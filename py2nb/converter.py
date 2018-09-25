@@ -1,4 +1,5 @@
-from IPython.nbformat.v3 import nbpy
+# from IPython.nbformat.v3 import nbpy
+from nbformat.v3 import nbpy
 from IPython import nbformat as nbf
 
 from io import StringIO
