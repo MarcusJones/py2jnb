@@ -1,5 +1,4 @@
 import os
-from py2nb.converter import convert
 from py2nb.tools import python_to_notebook
 
 def test_convert():

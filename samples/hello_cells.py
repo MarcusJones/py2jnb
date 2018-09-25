@@ -6,7 +6,7 @@ Demonstrate:
 * support **Markdown**
 * this is a list
 """
-#%% SCI CELL TEST1
+#%% # SCI CELL TEST1
 
 from __future__ import absolute_import, print_function, division
 

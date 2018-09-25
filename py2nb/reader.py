@@ -60,8 +60,11 @@ def convert_toplevel_docstring(tokens):
                     yield res
                     # To next token
                     continue
+
         elif token.type == tokenize.COMMENT:
             text = token.string
+
+            # Detect the %% scientific cell
             if text.startswith('#%%'):
                 #print("Spyder cell")
                 startline, startcol = token.start
