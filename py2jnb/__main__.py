@@ -1,5 +1,5 @@
 import argparse
-from py2nb.tools import python_to_notebook
+from py2jnb.tools import python_to_notebook
 
 description = """
 Convert literate python script into Jupyter Notebook
