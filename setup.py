@@ -23,7 +23,7 @@ setuptools.setup(
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
     ],
-    description="Utility to turn IPython scripts into Jupyter Notebook format",
+    description="Utility to turn IPython scripts into Jupyter Notebook format. Forked from py2nb project.",
     # install_requires=requirements,
     license="Apache Software License 2.0",
     long_description=readme,
