@@ -4,7 +4,7 @@
 
 
 
-*Original source repo readme follows*
+*Original source repo readme follows...*
 ***************
 # PY2NB: Python To Notebook Converter
 

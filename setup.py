@@ -1,10 +1,4 @@
 import setuptools
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-"""The setup script."""
-
-from setuptools import setup, find_packages
 
 with open('README.md') as readme_file:
     readme = readme_file.read()
@@ -12,37 +6,35 @@ with open('README.md') as readme_file:
 with open('CHANGELOG.md') as changelog_file:
     changelog = changelog_file.read()
 
-requirements = ['oceandb-driver-interface', ]
+# requirements = ['', ]
 
-setup_requirements = ['pytest-runner', ]
+# setup_requirements = ['', ]
 
-test_requirements = ['pytest', ]
+# test_requirements = ['pytest', ]
 
-setup(
-    author="leucothia",
-    author_email='devops@oceanprotocol.com',
+setuptools.setup(
+    name='oceandb-elasticsearch-driver',
+    author="M.Jones, forked from Siu Kwan Lam",
+    author_email='jones.0bj3@gmail.com',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Natural Language :: English',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3',
     ],
-    description="🐳 OceanDB ElasticSearch Driver (Python).",
-    install_requires=requirements,
+    description="Utility to turn IPython scripts into Jupyter Notebook format",
+    # install_requires=requirements,
     license="Apache Software License 2.0",
     long_description=readme,
-    long_description_content_type='text/x-rst',
-    include_package_data=True,
-    keywords='oceandb-elasticsearch-driver',
-    name='oceandb-elasticsearch-driver',
-    packages=find_packages(include=['oceandb_elasticsearch_driver']),
-    setup_requires=setup_requirements,
-    test_suite='tests',
-    tests_require=test_requirements,
-    url='https://github.com/oceanprotocol/oceandb-elasticsearch-driver',
+    long_description_content_type='text/markdown',
+    # include_package_data=True,
+    # keywords='oceandb-elasticsearch-driver',
+    packages=setuptools.find_packages(),
+    # setup_requires=setup_requirements,
+    # test_suite='tests',
+    # tests_require=test_requirements,
+    url='https://github.com/MarcusJones/py2nb',
     version='0.0.1',
-    zip_safe=False,
+    # zip_safe=False,
 )
