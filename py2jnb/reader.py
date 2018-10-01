@@ -2,6 +2,7 @@ import sys
 from collections import namedtuple
 import tokenize
 
+import logging
 if sys.version_info[0] == 2:
     TokenInfo = namedtuple('TokenInfo', 'type string start end line')
 
