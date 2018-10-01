@@ -1,0 +1,8 @@
+README.md
+setup.py
+py2jnb.egg-info/PKG-INFO
+py2jnb.egg-info/SOURCES.txt
+py2jnb.egg-info/dependency_links.txt
+py2jnb.egg-info/top_level.txt
+tests/__init__.py
+tests/test_conversion.py

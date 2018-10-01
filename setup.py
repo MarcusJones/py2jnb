@@ -13,7 +13,7 @@ with open('CHANGELOG.md') as changelog_file:
 # test_requirements = ['pytest', ]
 
 setuptools.setup(
-    name='oceandb-elasticsearch-driver',
+    name='py2jnb',
     author="M.Jones, forked from Siu Kwan Lam",
     author_email='jones.0bj3@gmail.com',
     classifiers=[
