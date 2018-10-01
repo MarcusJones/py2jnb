@@ -1,6 +1,7 @@
 __pycache__
 build
-*.pyc
+dist
+py2jnb.egg-info
 .ipynb_checkpoints
 .idea
 .pytest_cache
