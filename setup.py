@@ -6,7 +6,7 @@ with open('README.md') as readme_file:
 with open('CHANGELOG.md') as changelog_file:
     changelog = changelog_file.read()
 
-# requirements = ['', ]
+requirements = ['nbformat', 'IPython']
 
 # setup_requirements = ['', ]
 
@@ -24,7 +24,7 @@ setuptools.setup(
         'Programming Language :: Python :: 3',
     ],
     description="Utility to turn IPython scripts into Jupyter Notebook format. Forked from py2nb project.",
-    # install_requires=requirements,
+    install_requires=requirements,
     license="Apache Software License 2.0",
     long_description=readme,
     long_description_content_type='text/markdown',

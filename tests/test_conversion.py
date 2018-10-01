@@ -1,5 +1,5 @@
 import os
-from py2nb.tools import python_to_notebook
+from py2jnb.tools import python_to_notebook
 
 def test_convert():
     print("\nSTART TEST")
