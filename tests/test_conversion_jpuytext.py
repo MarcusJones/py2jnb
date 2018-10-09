@@ -1,7 +1,7 @@
 import os
 # from py2jnb.tools import python_to_notebook
 import jupytext
-
+from pathlib import Path
 
 # with open(INPUT_PY) as fin:
 #     data = fin.read()
@@ -29,7 +29,7 @@ def test_convert():
         data = fin.read()
         parsed = jupytext.reads(data, ext='.py', format_name='percent')
 
-    jupytext.writef(res,OUTPUT_IPYNB)
+    jupytext.writef(parsed,OUTPUT_IPYNB)
 
 def test_cells_convert():
     SAMPLE_DIR = os.path.join(os.getcwd(), 'samples')
@@ -49,4 +49,21 @@ def test_cells_convert():
         data = fin.read()
         parsed = jupytext.reads(data, ext='.py', format_name='percent')
 
-    jupytext.writef(res, OUTPUT_IPYNB)
+    jupytext.writef(parsed, OUTPUT_IPYNB)
+
+
+
+def test_cells_convert_all():
+    SAMPLE_DIR = Path('samples')
+    for py_path in list(SAMPLE_DIR.glob('**/*.py')):
+        print(py_path)
+
+        with py_path.open() as fin:
+            data = fin.read()
+            parsed = jupytext.reads(data, ext='.py', format_name='percent')
+
+        OUTPUT_IPYNB = py_path.parents[0] / Path(str(py_path.stem) + '.ipynb')
+
+        # assert OUTPUT_IPYNB.exists()
+
+        jupytext.writef(parsed, OUTPUT_IPYNB)

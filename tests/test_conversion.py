@@ -1,5 +1,7 @@
 import os
 from py2jnb.tools import python_to_notebook
+from pathlib import Path
+
 
 def test_convert():
     print("\nSTART TEST")
@@ -40,3 +42,7 @@ def test_cells_convert():
     assert os.path.exists(OUTPUT_IPYNB)
 
     # os.remove(OUTPUT_IPYNB)
+
+
+
+
