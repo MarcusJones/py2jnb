@@ -27,7 +27,9 @@ def read(filename):
         out = list(nl_gen)
 
     formatted = tokenize.untokenize(out).decode('utf-8')
-    return fix_empty_lines(formatted)
+    fixed = fix_empty_lines(formatted)
+    # print(fixed)
+    return fixed
 
 
 # =============================================================================
